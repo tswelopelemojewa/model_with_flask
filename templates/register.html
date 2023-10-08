@@ -24,67 +24,40 @@
         <link href="static/css/style.css" rel="stylesheet" />
 
 </head>
-<!-- <body>
+
+<body background-image="static/images/coal-mine.jpg">
     <br>
     <br>
-    <div class="row d-flex justify-content-center">
-        <br><br>
+    <main class="container">
+        <div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row d-flex justify-content-center">
+                <br><br>
     
-        <div class="col-md-8">
-            <form action="/register" method="post" class="form-control">
-                <h3>SIGN UP</h3>
-                <hr>
-                <label for="username">username</label>
-                <input type="text" id="username" name="username" class="form-control"  placeholder="Enter Username" required /><br>
+                <div class="col-md-8">
     
-                
-                <label for="role">Role</label>
-                <select type="text" id="role" name="role" class="form-control">
-                    <option>Select Specialty</option>
-                    <option value="Mine Manager">Mine Manager</option>
-                    <option value="Mine Planner">Mine Planner</option>
-                    <option value="Mine engineer">Mine engineer</option>
-                    <option value="Mine Inspector">Mine Inspector</option>
-                </select><br>
+                    <form class="form-control" action="/register" method="post">
+                        <h3>SIGN UP</h3>
+                        <hr>
     
-                
-                <label for="password">Password</label>
-                <input class="form-control" type="password" id="password" name="password" placeholder="Enter Password" required /> <br>
+                        <label for="username">Username:</label><br>
+                        <input class="form-control" type="text" id="username" name="username"><br>
+                        <label for="password">Password:</label><br>
+                        <input class="form-control" type="password" id="password" name="password"><br>
+                        <input class="btn btn-success" type="submit" value="SIGN UP">
+                        <p class="muted sm">Have an account already? <a href="/login">Sign in</a></p>
     
-                <button type="submit" class="btn btn-success">SIGN UP</button><br><br>
-    
-                <p class="muted sm">Have an account already? <a href="/login" >Sign in</a></p>
-    
-            </form>
-        </div>
-    </div>
-    
-</body> -->
-
-<body>
-    <br>
-    <br>
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <br><br>
-
-            <div class="col-md-8">
-
-                <form class="form-control" action="/register" method="post">
-                    <h3>SIGN UP</h3>
-                    <hr>
-
-                    <label for="username">Username:</label><br>
-                    <input class="form-control" type="text" id="username" name="username"><br>
-                    <label for="password">Password:</label><br>
-                    <input class="form-control" type="password" id="password" name="password"><br>
-                    <input class="btn btn-success" type="submit" value="SIGN UP">
-                    <p class="muted sm">Have an account already? <a href="/login">Sign in</a></p>
-
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
+            <br><br>
+            <br><br>
+            <br><br>
+    </main>
     <br>
 
 </body>

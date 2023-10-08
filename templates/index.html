@@ -115,12 +115,11 @@
 
                     <div x-show="homepage">
                         <br>
-                        <h3 id="home-text" class="text-center">ENHANCING SAFETY IN MINING USING 4IR TECHNOLOGY</h3><br><br>
-                        <!-- <h1 id="home-text" class="text-center">IN MINING</h1><br><br>
-                        <h1 id="home-text" class="text-center">USING 4IR TECHNOLOGY</h1> -->
-                        <div style="text-align: justify;">
+                        <h1 id="home-text" class="text-center">ENHANCING SAFETY IN MINING USING 4IR TECHNOLOGY</h1>
+                        <hr>
+                        <div class="text-center">
                             <p>VISUALIZATION OF THE UNDERGROUND EXCAVATION</p>
-                            <img src="./static/images/chamber.png" class="img-fluid" width="80%"/>
+                            <img src="static/images/bground.jpg" class="img-fluid" width="80%" />
                         </div>
 
                     </div>
@@ -162,15 +161,17 @@
                                     <th>DEPTH</th>
                                     <th>UCS</th>
                                     <th>UCS PREDICTED VALUE</th>
+                                    <!-- <th>ACTION</th> -->
                                 </thead>
 
                                 <tbody>
                                     <template x-for="i in UCS_Hist">
                                         <tr>
                                             <td x-text="i.Density"></td>
-                                            <td x-text="i.Depth"></td>
-                                            <td x-text="i.UCS"></td>
+                                            <td x-text="i.Depth_To"></td>
+                                            <td x-text="i.UCS_Mpa"></td>
                                             <td x-text="i.UCS_PredictedValue"></td>
+
                                         </tr>
                                     </template>
 
@@ -203,22 +204,24 @@
                             <!-- SRF historical data -->
                             <table class="table">
                                 <thead>
+
                                     <th>DENSITY</th>
                                     <th>DEPTH</th>
                                     <th>UCS</th>
-                                    <th>UCS PREDICTED VALUE</th>
-                                    <th>SRF PREDICTED VALUE</th>
-
+                                    <th>UCS PREDICTED</th>
+                                    <th>SRF PREDICTED</th>
                                 </thead>
 
                                 <tbody>
                                     <template x-for="i in SRF_Hist">
                                         <tr>
+
                                             <td x-text="i.Density"></td>
-                                            <td x-text="i.Depth"></td>
-                                            <td x-text="i.UCS"></td>
+                                            <td x-text="i.Depth_To"></td>
+                                            <td x-text="i.UCS_Mpa"></td>
                                             <td x-text="i.UCS_PredictedValue"></td>
                                             <td x-text="i.SRF_PredictedValue"></td>
+
                                         </tr>
                                     </template>
 
@@ -253,6 +256,27 @@
                             <button class="btn btn-info" @click="JnDescription">Jn PREDICT</button>
                             <button @click="refresh()" class="btn btn-info">REFRESH</button>
 
+                            <!-- JN historical data -->
+                            <table class="table">
+                                <thead>
+                                    <th>UCS PREDICTED</th>
+                                    <th>SRF PREDICTED</th>
+                                    <th>JN PREDICTED</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in JnHist">
+                                        <tr>
+
+                                            <td x-text="i.UCS_PredictedValue"></td>
+                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.Jn_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+                                </tbody>
+
+                            </table>
                         </div>
 
                         <!--5 Jr Section -->
@@ -281,6 +305,29 @@
                             <button class="btn btn-info" @click="JrDescription">Jr PREDICT</button>
                             <button @click="refresh()" class="btn btn-info">REFRESH</button>
 
+                            <!-- Jr historical data -->
+                            <table class="table">
+                                <thead>
+                                    <th>UCS PREDICTED</th>
+                                    <th>SRF PREDICTED</th>
+                                    <th>JN PREDICTED</th>
+                                    <th>JR PREDICTED</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in JnHist">
+                                        <tr>
+
+                                            <td x-text="i.UCS_PredictedValue"></td>
+                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.Jn_PredictedValue"></td>
+                                            <td x-text="i.Jr_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+                                </tbody>
+
+                            </table>
 
                         </div>
 
@@ -308,7 +355,30 @@
                             <button class="btn btn-info" @click="JaDescription">Ja PREDICT</button>
                             <button @click="refresh()" class="btn btn-info">REFRESH</button>
 
+                            <!-- Ja historical data -->
+                            <table class="table">
+                                <thead>
+                                    <th>UCS PREDICTED</th>
+                                    <th>SRF PREDICTED</th>
+                                    <th>JN PREDICTED</th>
+                                    <th>JR PREDICTED</th>
+                                    <th>JA PREDICTED</th>
+                                </thead>
 
+                                <tbody>
+                                    <template x-for="i in JnHist">
+                                        <tr>
+                                            <td x-text="i.UCS_PredictedValue"></td>
+                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.Jn_PredictedValue"></td>
+                                            <td x-text="i.Jr_PredictedValue"></td>
+                                            <td x-text="i.Ja_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+                                </tbody>
+
+                            </table>
                         </div>
 
 
@@ -336,6 +406,33 @@
                             <button class="btn btn-info" @click="JwDescription">Jw PREDICT</button>
                             <button @click="refresh()" class="btn btn-info">REFRESH</button>
 
+
+                            <!-- Ja historical data -->
+                            <table class="table">
+                                <thead>
+                                    <th>UCS PREDICTED</th>
+                                    <th>SRF PREDICTED</th>
+                                    <th>JN PREDICTED</th>
+                                    <th>JR PREDICTED</th>
+                                    <th>JA PREDICTED</th>
+                                    <th>JW PREDICTED</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in JnHist">
+                                        <tr>
+                                            <td x-text="i.UCS_PredictedValue"></td>
+                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.Jn_PredictedValue"></td>
+                                            <td x-text="i.Jr_PredictedValue"></td>
+                                            <td x-text="i.Ja_PredictedValue"></td>
+                                            <td x-text="i.Jw_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+                                </tbody>
+
+                            </table>
                         </div>
 
 
@@ -397,6 +494,34 @@
                                 </div>
                             </div>
 
+                            <!-- RQD historical data -->
+                            <table class="table">
+                                <thead>
+
+                                    <th>Depth From (m) Surface</th>
+                                    <th>Depth to (m) Surface</th>
+                                    <th>True Thickness</th>
+                                    <th>Hardness Property</th>
+                                    <th>RQD PREDICTED (%)</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in RQD_Hist">
+                                        <tr>
+
+                                            <td x-text="i.Depth_From"></td>
+                                            <td x-text="i.Depth_To"></td>
+                                            <td x-text="i.True_Thickness"></td>
+                                            <td x-text="i.Hardness"></td>
+                                            <td x-text="i.RQD_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+
+                                </tbody>
+
+                            </table>
+
 
                         </div>
 
@@ -440,6 +565,37 @@
 
 
                             <br>
+                            <!-- RQD historical data -->
+                            <table class="table">
+                                <thead>
+
+                                    <th>Jn Predict</th>
+                                    <th>Jr Predict</th>
+                                    <th>Ja Predict</th>
+                                    <th>Jw Predict</th>
+                                    <th>SRF Predict</th>
+                                    <th>RQD PREDICTED (%)</th>
+                                    <th>Q Value PREDICTED</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in Q_Hist">
+                                        <tr>
+
+                                            <td x-text="i.Jn_PredictedValue"></td>
+                                            <td x-text="i.Jr_PredictedValue"></td>
+                                            <td x-text="i.Ja_PredictedValue"></td>
+                                            <td x-text="i.Jw_PredictedValue"></td>
+                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.RQD_PredictedValue"></td>
+                                            <td x-text="i.Q_Value_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+
+                                </tbody>
+
+                            </table>
 
                         </div>
 
@@ -466,6 +622,39 @@
                             <button class="btn btn-info" @click="RMR">rmr predict</button>
                             <button @click="refresh()" class="btn btn-info">REFRESH</button>
 
+                            <!-- Q value historical data -->
+                            <table class="table">
+                                <thead>
+
+                                    <th>Jn Predict</th>
+                                    <th>Jr Predict</th>
+                                    <th>Ja Predict</th>
+                                    <th>Jw Predict</th>
+                                    <th>SRF Predict</th>
+                                    <th>RQD PREDICTED (%)</th>
+                                    <th>Q Value PREDICTED</th>
+                                    <th>RMR PREDICTED</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in RMR_Hist">
+                                        <tr>
+
+                                            <td x-text="i.Jn_PredictedValue"></td>
+                                            <td x-text="i.Jr_PredictedValue"></td>
+                                            <td x-text="i.Ja_PredictedValue"></td>
+                                            <td x-text="i.Jw_PredictedValue"></td>
+                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.RQD_PredictedValue"></td>
+                                            <td x-text="i.Q_Value_PredictedValue"></td>
+                                            <td x-text="i.RMR_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+
+                                </tbody>
+
+                            </table>
 
                         </div>
 
@@ -493,6 +682,30 @@
                                 <button @click="refresh()" class="btn btn-info">REFRESH</button>
                             </div>
 
+                             <!-- Q value historical data -->
+                             <table class="table">
+                                <thead>
+                                    <th>SRF Predict</th>
+                                    <th>RQD PREDICTED (%)</th>
+                                    <th>Q Value PREDICTED</th>
+                                    <th>RMR PREDICTED</th>
+                                    <th>ESR PREDICTED</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in ESR_Hist">
+                                        <tr>                                                                                                                                                                                                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.RQD_PredictedValue"></td>
+                                            <td x-text="i.Q_Value_PredictedValue"></td>
+                                            <td x-text="i.RMR_PredictedValue"></td>
+                                            <td x-text="i.ESR_PredictedValue"></td>
+
+                                        </tr>
+                                    </template>
+
+                                </tbody>
+
+                            </table>
 
                         </div>
 
@@ -518,6 +731,33 @@
                                     RECOMMENDATION</button>
                             </div>
 
+
+                            <!-- Q value historical data -->
+                            <table class="table">
+                                <thead>
+                                    <th>SRF Predict</th>
+                                    <th>RQD PREDICTED (%)</th>
+                                    <th>Q Value PREDICTED</th>
+                                    <th>RMR PREDICTED</th>
+                                    <th>ESR PREDICTED</th>
+                                    <th>MUS PREDICTED</th>
+                                </thead>
+
+                                <tbody>
+                                    <template x-for="i in MUS_Hist">
+                                        <tr>                                                                                                                                                                                                                            <td x-text="i.SRF_PredictedValue"></td>
+                                            <td x-text="i.RQD_PredictedValue"></td>
+                                            <td x-text="i.Q_Value_PredictedValue"></td>
+                                            <td x-text="i.RMR_PredictedValue"></td>
+                                            <td x-text="i.ESR_PredictedValue"></td>
+                                            <td x-text="i.Maximum_unsupported_span"></td>
+
+                                        </tr>
+                                    </template>
+
+                                </tbody>
+
+                            </table>
 
                         </div>
 
@@ -797,13 +1037,13 @@
                     </thead>
 
                     <tbody>
-                        <template x-for="i in history">
+                        <template x-for="i in history_list">
                             <tr>
                                 <td x-text="i.Jn"></td>
                                 <td x-text="i.Ja"></td>
                                 <td x-text="i.Jr"></td>
                                 <td x-text="i.Jw"></td>
-                                <td x-text="i.UCS_Virgin_stress_ratio"></td>
+                                <td x-text="i.UCS_Mpa"></td>
                                 <td x-text="i.RQD_p"></td>
                                 <td x-text="i.Q_Value"></td>
                                 <td x-text="i.SRF"></td>
